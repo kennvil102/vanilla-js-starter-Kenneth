@@ -2,12 +2,21 @@
 <html>
 
 <head>
-	<title>Ejemplo básico</title>
+	<title>Lista De Tareas!</title>
 	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<h1>La aplicación esta corriendo!</h1>
+	
+	<h1>Lista de tareas!</h1>
+
+   <button id="agregar" class="btn" onclick="agregarTarea( )">agregar</button>
+   
+   <input type="text" id="tareas" placeholder="ingrese una  tarea">
+   <div class="mover">
+   <input class="Contador" type="number">
+   </div>
 
 	<script src="./index.js" type="module"></script>
 </body>
