@@ -1,10 +1,13 @@
+*{
+    font-family: monospace;
+}
 body{
-    background-color: teal;
+    background-color: rgb(220, 233, 233);
     text-align: center;
 }
 .mover{
 position: absolute;
-left: 200px;
+left: 990px;
 }
 
 
@@ -16,4 +19,7 @@ left: 200px;
     border-radius: 50px;
     display: flex;
     text-align: center;
+}
+li{
+    margin: 11px;
 }
