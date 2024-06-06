@@ -1,6 +1,8 @@
+let btnTarea = document.getElementById("btnAggTarea")
+let tareaTextoNueva = document.getElementById("tareas")
+let checkbox = 
 function agregarTarea() {
     // obtenemos el valor digitado
-    let tareaTextoNueva = document.getElementById("tareas").value;
     
     // validamos que no este vacio
     if (tareaTextoNueva === "") {
@@ -30,13 +32,18 @@ function agregarTarea() {
 }
  
 //GET
-async function traerDatos() {
+async function traerDatos() { 
     try {
         //va esperarse y va traer a tareas.json
-        const respuesta = await fetch("tareas.json")
+        const respuesta = await fetch("http://localhost:3000/api/task")
         const datos = await respuesta.json()
         datos.forEach(elemento=>{
-            let p = document.createElement("p")
+            let lista=document.createElement("li");
+            nuevaTarea.textContent = elemento.nombre
+            let checkssito=document.createElement("input")
+            checkssito.type= "checkbox";
+            nuevaTarea.appendChild(checkssito)
+              
 
         })
         console.log(datos)
@@ -52,7 +59,7 @@ async function daDatos() {
             nombre:tareaTextoNueva.value,
             estado: false
         }
-       const respuesta = await fetch("(http://localhost:3000/api/task)",{
+       const respuesta = await fetch("http://localhost:3000/api/task",{
             method: "POST",
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -66,7 +73,7 @@ async function daDatos() {
     }
 }
 
-
+btnTarea.addEventListener("click",daDatos)
 
 //PUT actualiza los datos
 
