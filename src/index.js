@@ -28,7 +28,7 @@ async function traerDatos() {
             checkssito.type = "checkbox";
             checkssito.checked = elemento.estado;
 
-            // incrementar el contador si la tarea está completada
+            // incrementar el contador si la tarea esta completada
             if (elemento.estado) {
                 tareasCompletadas++;
             }
@@ -52,7 +52,7 @@ async function traerDatos() {
             listit.appendChild(divv);
         });
 
-        // Actualizar el valor del contador  
+        // actualizar el valor del contador  
         contador.value = tareasCompletadas;
 
         console.log(datos);
@@ -83,7 +83,7 @@ body: JSON.stringify(tarea)
 const datos = await respuesta.json();
 console.log(datos);
 
-// Actualizar la lista de tareas luego de agregar una nueva
+// actualizar la lista de tareas luego de agregar una nueva
 traerDatos();
 } catch (error) {
     console.error(error);
@@ -93,7 +93,7 @@ traerDatos();
     }
 }
 
-// Funcion para actualizar el estado de una tarea en el servidor
+// funcion para actualizar el estado de una tarea en el servidor
 async function actualizar(id, estado) {
     try {
         let tarea = {
@@ -135,7 +135,7 @@ async function deleteTarea(id) {
     }
 }
 
-//  evento  de click al botón para que al hacer clic y se agregue una nueva tarea
+//  evento  de click al boton para que al hacer clic y se agregue una nueva tarea
 btnTarea.addEventListener("click", agregarTarea);
 
 //  al presionar enter, se agrega una nueva tarea
@@ -145,7 +145,7 @@ tareaTextoNueva.addEventListener("keydown", (event) => {
     }
 });
 
-// funcion que se ejecuta cuando se hace clic en el botón de agregar tarea
+// funcion que se ejecuta cuando se hace clic en el boton de agregar tarea
 async function agregarTarea() {
     await daDatos(); // Llamamos a la funcion para enviar la nueva tarea al servidor
     tareaTextoNueva.value = ""; // limpiamos el campo de texto después de agregar la tarea
