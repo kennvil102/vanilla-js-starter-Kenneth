@@ -23,3 +23,10 @@ left: 990px;
 li{
     margin: 11px;
 }
+#Lista{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px; 
+}
+ 
